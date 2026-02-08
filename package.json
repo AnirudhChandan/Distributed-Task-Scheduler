@@ -1,0 +1,35 @@
+{
+  "name": "distributed-task-scheduler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start:worker": "tsx src/worker/index.ts",
+    "start:scheduler": "tsx src/scheduler/index.ts",
+    "start:api": "tsx src/dashboard-api.ts",
+    "dev": "concurrently \"npm run start:api\" \"npm run start:worker\" \"npm run start:scheduler\" --names \"API,WORKER,SCHEDULER\" -c \"blue,green,magenta\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.2.2",
+    "@types/uuid": "^10.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1",
+    "ioredis": "^5.9.2",
+    "redis": "^5.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "tsx": "^4.21.0"
+  }
+}

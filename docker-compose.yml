@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  # The Brain: This holds our Task Queue
+  redis:
+    image: redis:alpine
+    container_name: scheduler-redis
+    ports:
+      - "6379:6379" # Maps internal port 6379 to your laptop's 6379
+    networks:
+      - scheduler-net
+
+networks:
+  scheduler-net:
+    driver: bridge
